@@ -1,0 +1,81 @@
+-> RESPONDING TO REQUESTS WITH HTML FILES
+Inside CALCULATOR, make index.html file.
+index.html file is ready now and we'll send it to the calculator.js file so that when we open site's home page,index.html content appears. 
+API PARTS (http://expressjs.com/en/4x/api.html#res) 
+
+TO SEND OUR index.html file to our calculator.js:
+res.sendFile(location)
+Transfers the file at the given path. Sets the Content-Type response HTTP header field based on the filename’s extension. Unless the root option is set in the options object, path must be an absolute path to the file.
+
+app.get("/",function(req,res){
+    res.sendFile("index.html");
+});
+Now when our site home page gets loaded, the index.html contents are executed and didplayed to our browser.
+Since index.html is inside our machine, to get a global directory name with which the site will get the file no matter wherever it is:
+__dirname
+This tells the directory where it resides i.e. Users/SHASHANK MISHRA/Desktop/CALCULATOR USING EXPRESS.JS
+
+app.get("/",function(req,res){
+    res.sendFile(__dirname + "/index.html");
+}); 
+This will make it goto address Users/SHASHANK MISHRA/Desktop/CALCULATOR USING EXPRESS.JS/index.html  and when we open our home page of site,all contents in index.html will be there.
+Updating index.html will show changes directly to site also due to NODEMON.
+
+NOTE: __dirname is used to know any file's current location at any given time. So we can use that location & append another file's location to it. It doesn't matter that we're on any server.
+We can simply do __dirname + "/index.html"  to add file to it.
+
+-> PROCESSING POST REQUESTS WITH BODY PARSER
+When we click on Calculate button, the 
+<!-- this form has method post that means we're sending the data to index.html, but we want to send it to our server -->
+    <!-- <form action="index.html" method="post">-->
+
+<!-- now the data will be sent to home page i.e. root "/" -->
+<form action="/" method="post">
+
+TO HANDLE POST REQUESTS eg. clicking on Calculate button:
+app.post("/",function(req,res){
+    res.send("Thanks for posting that!");
+})
+Now when we click on Calculate, we're getting message back i.e. "Thanks for posting that!".
+
+Now we need to get the data user enters in First Number & Second Number , to get that we install:
+npm install body-parser        (this allows us to pass the information we get from the post request )
+
+CODE:
+const bodyParser = require("body-parser");
+// app.use(bodyParser.text)              // to pass all the request into text
+app.use(bodyParser.urlencoded());        // .urlencoded is used to pass data that comes from HTML form
+
+NOTE: WHENEVER YOU WANNA GRAB INFORMATION THAT GETS POSTED TO YOUR SERVER FROM AN HTML FORM, USE .urlencoded()
+
+app.use(bodyParser.urlencoded({extended: true}));        // .urlencoded is used to pass data that comes from HTML form
+Here {extended: true} is necessary whenever we use body-parser.
+
+console.log(req.body.num1);                   // this will give the number user entered inside num1, it'll be shown in hyper
+console.log(req.body.num2);                   // this will give the number user entered inside num2, it'll be shown in hyper
+
+NOTE: WHEN WE RIGHT CLICK TO VIEW PAGE SOURCE OF OUR SITE, USER GETS TO SEE ONLY THE HTML CODE I.E. index.html . ALL OTHER JS CODE IS HIDDEN AS WE'RE DOING IT ON OUR SERVER. 
+THIS IS ALL BECAUSE WE BUILT A BACK-END. 
+THE CALCULATOR SITE IS A WEB-APPLICATION AS THE CODE IS RUNNING ON BACK-END.
+
+LIST OF HTTP STATUS : https://en.wikipedia.org/wiki/List_of_HTTP_status_codes
+
+-> CHALLENGE - BMI CALCULATOR
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

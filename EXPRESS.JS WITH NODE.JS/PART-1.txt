@@ -1,0 +1,113 @@
+EXPRESS.JS is a Node framework. Previously we learnt that we can add jQuery to our javascript to add extra features.
+Express is similar, its a framework (a bunch of code) that somebody else wrote that adds extra feature and helps organize and structure your code for web applications built with Node.
+We can create desktop applications using node. Eg. VS CODE.
+
+Express was built to make user write less repetitive code while building web apps, made mainly for web developers. Using Express instead of Node saves 10x times of writing code. (https://www.npmjs.com/)
+
+-> CREATING A PROJECT :
+IN HYPER , cd Desktop/ + ENTER , mkdir my-express-server + ENTER, cd my-express-server + ENTER, touch server.js (to create a server.js file in directory) + ENTER, npm init + ENTER 
+DONE
+
+NOTE: WHENEVER HYPER STOPS WORKING, TO EXIT PRESS CTRL+C.
+
+-> DOCUMENTATION FOR EXPRESS ( http://expressjs.com/ )
+INSTALLING ( http://expressjs.com/en/starter/installing.html ) 
+npm install express + ENTER
+
+IN VS CODE, inside file server.js :
+const express = require("express");            // incorporating express to our project
+const app = express();                   // this is a function that represents the express module, we bind that to our const variable app
+
+// using a method of express i.e. listen which tells to listen on a specific port for any http request (we have build our 1st server)
+app.listen(3000,function(){
+    console.log("Server started on port 3000");           // now when we run it,console gets executed telling us that server has started on port 3000
+});              
+
+Now if we goto our ports location in our browser i.e. localhost:3000 , there we get an error Cannot GET /  which means when our browser tries to get in touch with our server on the port 3000, its not able to get anything back, so server doesn't respond on the requests as our browser doesn't have the information to display.
+
+-> localhost:3000 is same as the root of any website, eg. google.com , so its our domain called localhost:3000
+When we search for www.google.com then our browser sends a request to google servers to get data for this location, then google servers respond by sending back the website we needed.
+Since our server isn't sending anything back when browser makes the request , 
+
+// method provided by express that allows us to specify what should happen when a browser gets in touch with our server and makes a get request
+// here / represents the root(home) of our website , now when that get req happen we trigger a callback function which has request & response
+// app.get method defines what should happen when someone makes a get request to the home of site , the function tells the server what to do then
+app.get("/",function(request,response){
+    console.log(request);
+})   
+
+Now when we run node server.js in our hyper, and search localhost:3000 in our browser,browser shows same error as before , but hyper shows the whole information that came with our request since we did console.log(request); 
+Information that came was all associated with request that was made to our server.
+
+FOR THE RESPONSE:  HOME PAGE
+app.get("/",function(request,response){
+    // console.log(request);
+    response.send("Hello");                  // this is a response sending back Hello
+})    
+Now when we head to localhost:3000 , we see a Hello. When we typed localhost:3000 we specified a location of server, browser goes to that location and makes a request to get data, then the callback function gets triggered and we send browser a response i.e. Hello.
+
+We can also send HTML ELEMENTS as a response:
+response.send("<h1>Hello world!</h1>");                  // localhost:3000 in our browser will show Hello world! in h1 type
+
+YOU CAN SHORTEN REQUEST TO req & RESPONSE TO res.
+
+-> WORKING WITH ROUTES
+CONTACT PAGE
+app.get("/contact",function(req,res){                           // for CONTACT PAGE ("/contact" means the contact page) localhost:3000/contact
+    res.send("Contact me at: shashank@gmail.com")               
+})
+This is another route for contact. When we goto http://localhost:3000/contact , we get the information or response for contact page i.e. "Contact me at: shashank@gmail.com"
+Here our server is sending back the info when we went to contact page.
+
+ABOUT PAGE
+app.get("/about",function(req,res){                        // for about page i.e. localhost:3000/about
+    res.send("<h1>Hey, I am Shashank Mishra! I am a software developer.</h1>")
+})
+
+We can have pages about everything like hobbies,contact,about,cv etc.
+Now for each page and changes made, we had to end & restart the server (in hyper CTRL+C and then node server.js to run the file).
+
+So we'll install NODEMON. It monitors the changes in our source code and automatically restart our server.
+TO INSTALL NODEMON , npm install -g nodemon + ENTER in our hyper.
+Now in our directory, write  nodemon server.js + enter, this activates nodemon, so now for each change done, we won't have to keep restarting the server. It will be live changes visible.
+
+-> STATIC WEBSITES -> browser makes a request to the server, and server sends back the html,css,js file which gets run and shows the result.If there's any js code to be run, it runs on the client side, i.e. user's browser. That js is sent to browser and runs when user loads the site.
+
+SERVER-SIDE means when site makes a request to the server, it'll execute the whole code & only deliver the outcome back to the user.User isn't able to see any code execution unlike static websites. Everything is done on our server.
+
+-> MAKING A CALCULATOR
+In hyper, cd Desktop/ , mkdir CALCULATOR , cd CALCULATOR/ , touch calculator.js , npm init.
+Now install express i.e. npm install express. (This was the workflow for creating every single website)
+
+NOTE: This below gives name to our local server, its name above was localhost:3000 and here its name is localhost:2232 .
+// defining server
+app.listen(2232,function(){
+    console.log("Server is running on port 2232.");
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

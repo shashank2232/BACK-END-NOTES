@@ -1,0 +1,97 @@
+-> Node.js allows us to create a backend using javascript. We already know how to use javascript. Example eBay,UBER,TWITTER,NETFLIX etc. all use Nodejs in their backend.
+Currently we wrote javascript in our website and were able to run it inside our browser,and the javascript code till now was kept inside the browser. 
+It just didn't go beyond the boundaries of the browser. Now we need to write code that can interact directly with the computer independent of the browser.
+
+-> NODE.JS allows us to take javascript out of the browser and allows javascript to interact directly with hardware of computer. By this js can be used to create a desktop application.
+With Nodejs you can write javascript code not just in the browser but also to write full applications that work on your computer.
+Nodejs is used to run javascript code on somebody else's computer or a server. 
+
+Eg. A user goes to google and searches a query,browser makes a request to google servers and on those servers we can execute javascript code to process their request and then we can 
+send back the result to the user and simply get their web browser to display the information(all the code editing and everything happens behind the scenes on the servers rather than
+on the client side).
+
+-> cd Desktop/ + Enter  (to come to Desktop)
+   mkdir INTRO-TO-NODE + ENTER (to make folder in desktop)
+   touch index.js + ENTER (to make a file index.js inside the folder)
+   node index.js + ENTER (this says use node to run the file index.js)
+   When we press enter, the result of file index.js gets shown in our hyper terminal i.e. HELLO WORLD!
+
+-> RELP (READ EVALUATION PRINT LOOP) allows you to execute code in byte size chunks, eg. writing a single line of code,hitting enter to run it and so on.
+In REPL, you can execute single lines of code just like you did in chrome developer tools.
+To access REPL :
+Inside hyper, write node + ENTER. We see > which tells use we're inside REPL. Here we can write code directly.
+> console.log("hello");    + ENTER
+hello
+> 3+5 + ENTER
+8
+> "SHASHANK" + " MISHRA"
+'SHASHANK MISHRA'
+
+NOTE: TO GET ALL POSSIBILITIES FOR ANY KEYWORDS 
+con + press TAB twice
+const continue console constants constructor
+
+console. + press TAB twice
+every possibility with console. comes for example console.assert etc.
+
+TO EXIT FROM THE REPL:
+.exit + ENTER   OR Press CTRL+C twice
+
+TO CLEAR THE CONSOLE:
+clear + ENTER
+
+-> LIBRARIES & DOCUMENTATION OF NODEJS https://nodejs.org/api/
+
+const fs = require("fs");  // require is a method of nodejs used to use module "fs" , means we have taken this fs file system project into our module and we can now use it in our project
+
+fs.copyFileSync('source.txt','destination.txt');  // .copyFileSync is used to create a COPY of our file
+
+fs.copyFileSync("file1.txt", "file2.txt");  // this line will look in the current directory i.e. INTRO-TO-NODE for file1.txt and then it will copy it to file2.txt
+
+Now we save it in vs code and go to hyper, and we go to our directory INTRO-TO-NODE and then just run it using :
+node index.js + ENTER  , so now another file gets created in our directory named file2.txt with the same content that was in file1.txt 
+This is done by the method .copyFileSync
+
+Now if we change the content in file2.txt  and again run node index.js + ENTER in our hyper, again file2.txt will b having the same content as file1.txt
+Hence we're able to use Node.js to write javascript code and execute it including manipulating,reading,writing etc.
+
+-> NPM PACKAGE MANAGER FOR EXTERNAL MODULES (NODE PACKAGE MANAGER)
+Provides packages for our projects, packages on NPM are bits of re-usable code that somebody else wrote, and using npm we can use those code in our projects.
+NPM automatically gets installed with NODE.
+
+-> INITIALIZING/CALLING NPM
+cd INTRO-TO-NODE/ + ENTER
+npm init + ENTER
+First it asks user that if we're ok with the project name, if yes then enter. Then it asks the version,so enter. Then it asks description of our project,so give description.
+Then it shows the entry point i.e. index.js
+Then it shows test command ,ignore it. Then it shows git repository,ignore it.
+Then shows keywords,ignore. Then shows author, put your name there. Then shows license, ENTER.
+
+Now this process has created a file called package.json  which contains description of all NPM packages so far.
+Now we'll install external packages. GOTO https://www.npmjs.com/
+Search superhero name , each module has details on how to use it ,how to install it etc.
+
+TO INSTALL IT: be in the right directory in hyper i.e. INTRO-TO-NODE , then type npm install superheroes + ENTER , so now it'll download the superheroes module from online.
+
+In our index.js , var superheroes = require("superheroes");  this line incorporates the module "superheroes" in our project.
+superheroes.random();      // this generates a random superhero name as output
+
+INDEX.JS :
+// first we installed the module "superheroes" using hyper by npm install superheroes
+// then we included it in our project using require("superheroes")
+// then we generate a random superhero name and store it in a var and console.log it
+var superheroes = require("superheroes");     
+var mySuperheroName = superheroes.random();                        
+console.log(mySuperheroName);
+
+Now to run it, type node index.js + ENTER in hyper, it will print a random superheroname each time you run it.
+package.json , json is simply a file format used to organize data.
+
+-> TO INSTALL SUPERVILLAIN MODULE FOLLOW SAME METHOD AS IN SUPERHEROES MODULE
+
+
+
+
+
+
+

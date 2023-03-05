@@ -1,0 +1,71 @@
+CMD :
+TO MAKE A FOLDER IN COMPUTER
+Type in Command -> mkdir MUSIC
+A folder named MUSIC will b created in the machine.
+
+TO SWITCH TO DESKTOP :
+USE cd i.e. change directory -> cd DESKTOP + ENTER 
+will change directory to DESKTOP and we can search anything there.
+
+HYPER :
+ls -> This lists all the items inside a particular directory.
+
+Change directory ->  cd Desktop/              (NOTE: no need to write full Desktop, type Des and press TAB)
+Now our location of directory is Desktop.
+
+TO COME BACK TO ROOT DIRECTORY:
+cd ~ + ENTER  , this will make us come back to our Root Directory
+
+Eg. We have a DOCUMENTS folder on our desktop, it has a folder Learn and folder Learn has a folder Languages.
+To reach there type->  cd Desktop/DOCUMENTS/Learn/Languages/  + ENTER
+We'll reach Languages.
+
+TO COPY THE LAST COMMAND, PRESS UP BUTTON.
+
+CTRL+A -> to go to the beginning of the command line
+CTRL+E -> to go to the end of the command line
+
+DIRECTORY CREATION:
+cd Desktop/           (changes directory to Desktop)
+mkdir SHUSHU          (makes a folder SHUSHU in desktop)
+cd SHUSHU/            (goes inside directory SHUSHU)
+ls                    (gives all the list inside SHUSHU i.e. 0 initially as its empty)
+
+TO CREATE A TEXT FILE INSIDE THIS FOLDER SHUSHU:
+touch Text.txt + ENTER        (now inside the folder SHUSHU, a text file of name TEXT has been created using HYPER terminal)
+
+TO OPEN THAT TEXT.TXT FILE USING HYPER:
+start Text.txt + ENTER           (this will open the Text file inside SHUSHU directly using HYPER)
+
+TO OPEN TEXT.TXT FILE INSIDE ATOM:
+start atom Text.txt
+
+TO DELETE A FILE FROM A FOLDER(eg. delete Text.txt from folder SHUSHU)
+rm Text.txt + ENTER             (this will delete Text.txt file from folder SHUSHU)
+
+TO KNOW WHAT IS YOUR CURRENT LOCATION:
+pwd + ENTER  (print working directory command tells your current location)
+
+TO REMOVE ALL FILES TOGETHER:
+rm * + ENTER        (if folder has 3 files, this will delete all together) NOTE: * is used to only remove FILES NOT FOLDERS
+
+TO REMOVE FOLDERS:
+cd Desktop/         (to come to desktop)
+rm -r SHUSHU/       (to remove folders we use -r with folder name, this will delete SHUSHU folder from desktop)
+
+GUIDE : https://www.learnenough.com/command-line-tutorial
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

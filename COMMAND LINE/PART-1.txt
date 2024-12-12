@@ -51,7 +51,7 @@ rm * + ENTER        (if folder has 3 files, this will delete all together) NOTE:
 
 TO REMOVE FOLDERS:
 cd Desktop/         (to come to desktop)
-rm -r SHUSHU/       (to remove folders we use -r with folder name, this will delete SHUSHU folder from desktop)
+rm -r SH/       (to remove folders we use -r with folder name, this will delete SH folder from desktop)
 
 GUIDE : https://www.learnenough.com/command-line-tutorial
 
